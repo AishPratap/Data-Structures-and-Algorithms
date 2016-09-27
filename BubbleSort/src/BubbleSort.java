@@ -1,12 +1,11 @@
-/**
- * Created by aishpratap on 9/27/16.
- */
-
 import java.io.BufferedInputStream;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class SelectionSort {
+/**
+ * Created by aishpratap on 9/27/16.
+ */
+public class BubbleSort {
     public static void main(String args[]){
         Scanner scanner = new Scanner(new BufferedInputStream(System.in));
         int testCases = scanner.nextInt();
@@ -27,29 +26,26 @@ public class SelectionSort {
 
             }
 
-            unsortedArray = selectionSort(unsortedArray);
+            unsortedArray = bubbleSort(unsortedArray);
             System.out.println(unsortedArray);
         }
     }
 
-    //recursively iterate over each of the element in the array to find the index of the
-    // minimum element and then swap.
-    static ArrayList<Integer> selectionSort(ArrayList<Integer> unsorted){
+    static ArrayList<Integer> bubbleSort(ArrayList<Integer> unsorted){
 
-        for (int i = 0; i<unsorted.size(); i++){
+        boolean sortPerformed = true;
 
-            int lowestIndex = i;
+        while (sortPerformed){
+            sortPerformed = false;
 
-            for (int j = i+1; j<unsorted.size(); j++){
-
-                if (unsorted.get(j)<unsorted.get(lowestIndex)){
-                    lowestIndex = j;
+            for (int i = 0; i<unsorted.size()-1; i++){
+                if (unsorted.get(i)>unsorted.get(i+1)){
+                    int temp = unsorted.get(i);
+                    unsorted.set(i,unsorted.get(i+1));
+                    unsorted.set(i+1,temp);
+                    sortPerformed = true;
                 }
             }
-
-            int temp = unsorted.get(i);
-            unsorted.set(i,unsorted.get(lowestIndex));
-            unsorted.set(lowestIndex, temp);
         }
 
         return unsorted;
