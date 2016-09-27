@@ -31,6 +31,7 @@ public class BubbleSort {
         }
     }
 
+    //Compare elements next to each other and sort them. Repeat this till there is no need to swap again.
     static ArrayList<Integer> bubbleSort(ArrayList<Integer> unsorted){
 
         boolean sortPerformed = true;
@@ -50,5 +51,4 @@ public class BubbleSort {
 
         return unsorted;
     }
-
 }
