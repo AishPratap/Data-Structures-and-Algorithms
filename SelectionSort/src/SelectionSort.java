@@ -1,10 +1,11 @@
+/**
+ * Created by aishpratap on 9/27/16.
+ */
+
 import java.io.BufferedInputStream;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-/**
- * Created by aishpratap on 9/27/16.
- */
 public class SelectionSort {
     public static void main(String args[]){
         Scanner scanner = new Scanner(new BufferedInputStream(System.in));
