@@ -1,12 +1,12 @@
-/**
- * Created by aishpratap on 9/27/16.
- */
-
 import java.io.BufferedInputStream;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class BubbleSort {
+/**
+ * Created by aishpratap on 9/27/16.
+ */
+public class InsertionSort {
+
     public static void main(String args[]){
         Scanner scanner = new Scanner(new BufferedInputStream(System.in));
         int testCases = scanner.nextInt();
@@ -27,26 +27,23 @@ public class BubbleSort {
 
             }
 
-            unsortedArray = bubbleSort(unsortedArray);
+            unsortedArray = insertionSort(unsortedArray);
             System.out.println(unsortedArray);
         }
     }
 
     //Compare elements next to each other and sort them. Repeat this till there is no need to swap again.
-    static ArrayList<Integer> bubbleSort(ArrayList<Integer> unsorted){
+    static ArrayList<Integer> insertionSort(ArrayList<Integer> unsorted){
 
-        boolean sortPerformed = true;
+        for (int i =1; i < unsorted.size(); i++){
 
-        while (sortPerformed){
-            sortPerformed = false;
+            int key = unsorted.get(i);
 
-            for (int i = 0; i<unsorted.size()-1; i++){
-                if (unsorted.get(i)>unsorted.get(i+1)){
-                    int temp = unsorted.get(i);
-                    unsorted.set(i,unsorted.get(i+1));
-                    unsorted.set(i+1,temp);
-                    sortPerformed = true;
-                }
+            for (int j = i-1;j >= 0 && key<unsorted.get(j); j--){
+
+                unsorted.set(j+1,unsorted.get(j));
+                unsorted.set(j,key);
+                System.out.println(unsorted);
             }
         }
 
