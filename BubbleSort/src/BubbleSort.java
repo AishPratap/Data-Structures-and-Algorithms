@@ -16,7 +16,7 @@ public class BubbleSort {
 
             System.out.println("To end the array of elements, enter '-1'");
 
-            ArrayList<Integer> unsortedArray = new ArrayList();
+            ArrayList<Integer> unsortedArray = new ArrayList<>();
 
             while (scanner.hasNextInt()){
 
@@ -35,7 +35,7 @@ public class BubbleSort {
     }
 
     //Compare elements next to each other and sort them. Repeat this till there is no need to swap again.
-    ArrayList<Integer> bubbleSort(ArrayList<Integer> unsorted){
+    private ArrayList<Integer> bubbleSort(ArrayList<Integer> unsorted){
 
         boolean sortPerformed = true;
 

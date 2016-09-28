@@ -16,7 +16,7 @@ public class SelectionSort {
 
             System.out.println("To end the array of elements, enter '-1'");
 
-            ArrayList<Integer> unsortedArray = new ArrayList();
+            ArrayList<Integer> unsortedArray = new ArrayList<>();
 
             while (scanner.hasNextInt()){
 
@@ -36,7 +36,7 @@ public class SelectionSort {
 
     //recursively iterate over each of the element in the array to find the index of the
     // minimum element and then swap.
-    ArrayList<Integer> selectionSort(ArrayList<Integer> unsorted){
+    private ArrayList<Integer> selectionSort(ArrayList<Integer> unsorted){
 
         for (int i = 0; i<unsorted.size(); i++){
 

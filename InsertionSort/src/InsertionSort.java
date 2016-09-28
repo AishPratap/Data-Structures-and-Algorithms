@@ -17,7 +17,7 @@ public class InsertionSort {
 
             System.out.println("To end the array of elements, enter '-1'");
 
-            ArrayList<Integer> unsortedArray = new ArrayList();
+            ArrayList<Integer> unsortedArray = new ArrayList<>();
 
             while (scanner.hasNextInt()){
 
@@ -35,7 +35,7 @@ public class InsertionSort {
     }
 
     //Compare elements next to each other and sort them. Repeat this till there is no need to swap again.
-    ArrayList<Integer> insertionSort(ArrayList<Integer> unsorted){
+    private ArrayList<Integer> insertionSort(ArrayList<Integer> unsorted){
 
         for (int i =1; i < unsorted.size(); i++){
 
