@@ -36,6 +36,7 @@ public class QuickSort {
         }
     }
 
+    //recursively divide the array and sort it.
     private void sort(Integer[] array, int low, int high){
 
         if (low<high){
@@ -46,6 +47,7 @@ public class QuickSort {
 
     }
 
+    //compare the values in the array to the pivot element and swap them to sort based on that.
     private int partition(Integer[] array, int low, int high){
 
         int pivot = array[high];
