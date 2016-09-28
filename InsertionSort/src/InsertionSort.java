@@ -1,13 +1,15 @@
+/**
+ * Created by aishpratap on 9/27/16.
+ */
+
 import java.io.BufferedInputStream;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-/**
- * Created by aishpratap on 9/27/16.
- */
 public class InsertionSort {
 
     public static void main(String args[]){
+
         Scanner scanner = new Scanner(new BufferedInputStream(System.in));
         int testCases = scanner.nextInt();
 
@@ -24,26 +26,24 @@ public class InsertionSort {
                     break;
                 }
                 unsortedArray.add(value);
-
             }
 
-            unsortedArray = insertionSort(unsortedArray);
+            InsertionSort iSort = new InsertionSort();
+            unsortedArray = iSort.insertionSort(unsortedArray);
             System.out.println(unsortedArray);
         }
     }
 
     //Compare elements next to each other and sort them. Repeat this till there is no need to swap again.
-    static ArrayList<Integer> insertionSort(ArrayList<Integer> unsorted){
+    ArrayList<Integer> insertionSort(ArrayList<Integer> unsorted){
 
         for (int i =1; i < unsorted.size(); i++){
 
             int key = unsorted.get(i);
 
             for (int j = i-1;j >= 0 && key<unsorted.get(j); j--){
-
                 unsorted.set(j+1,unsorted.get(j));
                 unsorted.set(j,key);
-                System.out.println(unsorted);
             }
         }
 

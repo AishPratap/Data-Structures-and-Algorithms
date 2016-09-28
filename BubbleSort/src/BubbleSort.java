@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class BubbleSort {
+
     public static void main(String args[]){
         Scanner scanner = new Scanner(new BufferedInputStream(System.in));
         int testCases = scanner.nextInt();
@@ -27,13 +28,14 @@ public class BubbleSort {
 
             }
 
-            unsortedArray = bubbleSort(unsortedArray);
+            BubbleSort bSort = new BubbleSort();
+            unsortedArray = bSort.bubbleSort(unsortedArray);
             System.out.println(unsortedArray);
         }
     }
 
     //Compare elements next to each other and sort them. Repeat this till there is no need to swap again.
-    static ArrayList<Integer> bubbleSort(ArrayList<Integer> unsorted){
+    ArrayList<Integer> bubbleSort(ArrayList<Integer> unsorted){
 
         boolean sortPerformed = true;
 

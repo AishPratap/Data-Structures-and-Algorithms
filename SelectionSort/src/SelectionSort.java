@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 public class SelectionSort {
+
     public static void main(String args[]){
         Scanner scanner = new Scanner(new BufferedInputStream(System.in));
         int testCases = scanner.nextInt();
@@ -27,14 +28,15 @@ public class SelectionSort {
 
             }
 
-            unsortedArray = selectionSort(unsortedArray);
+            SelectionSort sSort = new SelectionSort();
+            unsortedArray = sSort.selectionSort(unsortedArray);
             System.out.println(unsortedArray);
         }
     }
 
     //recursively iterate over each of the element in the array to find the index of the
     // minimum element and then swap.
-    static ArrayList<Integer> selectionSort(ArrayList<Integer> unsorted){
+    ArrayList<Integer> selectionSort(ArrayList<Integer> unsorted){
 
         for (int i = 0; i<unsorted.size(); i++){
 
