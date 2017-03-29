@@ -19,16 +19,20 @@ public class LinkedList {
         list.show();
         list.add(2);
         list.show();
-        list.add(3);
+        list.add(4);
         list.show();
         list.addAtIndex(4,list.listCount);
         list.show();
-        list.deleteNodeWithData(2);
+        //list.removeNodes(head);
         list.show();
         list.deleteNodeAtIndex(list.listCount);
         list.show();
-        list.deleteNodeAtIndex(0);
-        list.show();
+//        list.deleteNodeAtIndex(0);
+//        list.show();
+//        list.removeDuplicate();
+//        list.show();
+        System.out.println(list.findValueFromLast(4));
+
     }
 
     public void show(){
@@ -91,8 +95,9 @@ public class LinkedList {
         }else {
             System.out.println("Index out of bounds");
         }
-
     }
+
+    public void addLists()
 
     public boolean deleteNodeWithData(int data){
 
@@ -114,6 +119,25 @@ public class LinkedList {
         return false;
 
     }
+
+    public static Node removeNodes(Node list, int x) {
+
+        Node current = list;
+
+        while (true){
+
+            if(list == null)
+                break;
+
+            if (current.nextNode.data.equals(x)){
+
+                current.nextNode = current.nextNode.nextNode;
+            }
+            current = current.nextNode;
+        }
+        return list;
+    }
+
 
     public boolean deleteNodeAtIndex(int index){
 
@@ -149,6 +173,53 @@ public class LinkedList {
 
     }
 
+    public void removeDuplicate(){
+
+
+        if (listCount > 1) {
+            Node previous  = head;
+            Node current = head.nextNode;
+            while (current != null) {
+                Node runner = head;
+                while (runner != current) { // Check for earlier dups
+                    if (runner.data == current.data) {
+                        Node tmp = current.nextNode; // remove current previous.next = tmp;
+                        previous.nextNode = tmp;
+                        current = tmp;
+                        listCount --;
+                        break;// update current to next node break; // all other dups have already been removed
+                    }
+                    runner = runner.nextNode;
+                }
+                if (runner == current) { // current not updated - update now previous = current;
+                    previous = current;
+                    current = current.nextNode;
+                }
+            }
+        }
+        System.out.println("Done");
+    }
+
+    public int findValueFromLast(int indexFromLast){
+
+        if (listCount >= indexFromLast){
+            Node leader = head;
+            Node follower = head;
+
+            for(int i = 1; i < indexFromLast; i ++){
+                leader = leader.nextNode;
+            }
+
+            while (leader.nextNode != null){
+                leader = leader.nextNode;
+                follower = follower.nextNode;
+            }
+
+            return (int)follower.data;
+        }
+        return -1;
+    }
+
     private class Node{
 
         Node nextNode;
@@ -174,3 +245,5 @@ public class LinkedList {
 }
 
 
+
+    
